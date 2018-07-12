@@ -4,7 +4,7 @@
 
 <div class="wrap">
     <h2>Mistape</h2>
-    <table class="wp-list-table widefat fixed striped ">
+    <table class="wp-list-table widefat fixed striped">
         <thead>
         <tr>
             <th style="width: 5%">ID</th>

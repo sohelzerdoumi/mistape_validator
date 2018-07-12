@@ -32,6 +32,9 @@ class MistapeCorrector
         return $nbOccurences == 1;
     }
 
+    /**
+     * @return int|\WP_Error
+     */
     public function autofix()
     {
         $post        = $this->mistape->getPost();
@@ -56,7 +59,7 @@ class MistapeCorrector
     {
         $context   = htmlspecialchars($this->mistape->getSelectionContext());
         $selection = htmlspecialchars($this->mistape->getSelection());
-        $selection = '<div class="mistape-text-danger" ">' . $selection . '</div>';
+        $selection = '<div class="mistape-text-danger">' . $selection . '</div>';
         $output    = str_replace($this->mistape->getSelection(), $selection, $context);
 
         return $output;
@@ -71,7 +74,7 @@ class MistapeCorrector
     {
         $context     = htmlspecialchars($this->mistape->getSelectionContext());
         $correctText = htmlspecialchars($this->mistape->getComment());
-        $correctText = '<div class="mistape-text-success" ">' . $correctText . '</div>';
+        $correctText = '<div class="mistape-text-success">' . $correctText . '</div>';
         $output      = str_replace($this->mistape->getSelection(), $correctText, $context);
 
         return $output;

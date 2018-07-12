@@ -38,14 +38,14 @@ class MistapeValidatorPlugin
 
     public function admin_menu()
     {
-        add_management_page('Mistape Validator', 'Mistape Validator', 'edit_pages', 'mistape_list', array($this->mistapeController, 'run'));
+        add_management_page('Mistape Validator', 'Mistape Validator', 'edit_posts', 'mistape_list', array($this->mistapeController, 'run'));
     }
 }
 
 
 function mistape_validator_init()
 {
-    if (is_admin()) {
+    if (current_user_can('edit_posts')) {
         $mistapeValidator = new MistapeValidatorPlugin();
         $mistapeValidator->init();
     }
